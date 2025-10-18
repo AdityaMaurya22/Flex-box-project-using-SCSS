@@ -1,0 +1,450 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(244, 244, 244);
+    font-size: clamp(14px, 1vw, 18px);
+}
+
+body {
+    background-color: #1d1d1d;
+}
+
+@mixin flex-column($gap: 0rem) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+section {
+    max-width: 2000px;
+}
+
+main {
+    width: 100%;
+    @include flex-column(0rem);
+    align-items: center;
+
+    section.view1{
+        width: 100%;
+        @include flex-column(1rem);
+        padding: 1rem;
+
+        .top {
+            width: 100%;
+
+            img {
+                width: 100%;
+                border-radius: 0.7rem;
+            }
+        }
+
+        .bottom {
+            background-color: #292929;
+            border-radius: 0.7rem;
+            padding: 1.5rem;
+            @include flex-column(3rem);
+
+            .text {
+                @include flex-column(0.7rem);
+
+                h1 {
+                    font-weight: 200;
+                    font-size: 2.5rem;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    font-weight: 100;
+
+                    opacity: 0.6;
+                    line-height: 1.5;
+                }
+
+                button {
+                    width: fit-content;
+                    border: none;
+                    outline: none;
+                    padding: 0.7rem 1rem;
+                    border-radius: 0.5rem;
+                }
+            }
+
+        }
+    }
+
+    section.view2{
+        @include flex-column(2rem);
+        width: 100%;
+        padding: 1rem;
+
+        .top,
+        .bottom{
+            display: flex;
+            justify-content: space-around;
+            width:100%;
+        }
+
+        .element{
+            text-align: center;
+            @include flex-column(1rem);
+
+            p{
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                font-weight: 300;
+                opacity: 0.5;
+            }
+
+            h1{
+                font-size: 2rem;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+        }
+
+    }
+
+    section.view3{
+        @include flex-column(1rem);
+        width:100%;
+        padding: 1rem;
+
+        .top{
+            width:100%;
+            img{
+                width:100%;
+                object-fit: cover;
+                border-radius: 0.7rem;
+            }
+        }
+
+        .bottom{
+            width:100%;
+            @include flex-column(3rem);
+            background-color: #292929;
+            border-radius: 0.7rem;
+            padding:1.5rem;
+
+            h3{
+                font-weight: 300;
+                text-transform: uppercase;
+            }
+
+            .text{
+                @include flex-column(0.7rem);
+
+                h1{
+                    text-transform:uppercase;
+                    font-size: 2.5rem;
+                    font-weight: 300;
+                }
+
+                p{
+                    font-weight: 100;
+                    opacity: 0.6;
+                    line-height: 1.5;
+                }
+
+                .details{
+                    @include flex-column(1rem);
+                }
+            }
+        }
+    }
+
+    section.view4{
+        @include flex-column(2rem);
+        width:100%;
+        padding:1rem;
+        text-transform: uppercase;
+
+        >h2{
+            font-size: 2.5rem;
+            font-weight: 300;
+        } 
+
+        .cards{
+            @include flex-column(1rem); 
+
+
+            .card1{
+                background-image: url(card1.webp);
+            }
+
+            .card2{
+                background-image: url(card2.webp);
+            }
+
+            .card3{
+                background-image: url(card3.webp);
+            }
+
+            .card1,.card2,.card3{
+                width:100%;
+                background-size:cover;
+                aspect-ratio: 1/1;
+                @include flex-column(0rem);
+                justify-content: space-between;
+                padding:2.5rem;
+                border-radius: 0.7rem;
+
+                .top{
+                    display: flex;
+                    justify-content: flex-end;
+                    gap:1rem;
+
+                    .icon{
+                        backdrop-filter: blur(10px);
+                        background-color: rgb(114 114 114 / 40%);
+                        padding:0.7rem;
+                        border: 1px solid white;
+                        font-size: 1.6rem;
+                        border-radius: 50%;
+                        width:fit-content;
+                    
+                    }
+                }
+
+                .bottom{    
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    backdrop-filter: blur(10px);
+                    background-color: rgb(114 114 114 / 40%);
+                    padding:0.7rem;
+                    width:100%;
+                    border-radius: 0.5rem;
+                    
+                    h2{
+                       font-size: 1.6rem; 
+                       font-weight: 300;
+                    }
+
+                    p{
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    section.view5{
+        @include flex-column(1rem);
+        width:100%;
+        padding:1rem;
+        text-transform: uppercase;
+
+        .top{
+            background-image: url(view5.webp);
+            background-size:cover;
+            background-position: center;
+            aspect-ratio: 1.5/1;
+            border-radius: 0.7rem;
+        }
+
+        .bottom{
+            @include flex-column(3rem);
+            background-color: #292929;
+            border-radius: 0.7rem;
+            padding:1.5rem;
+
+            .text{
+                
+                p{
+                    font-size: 1.3rem;
+                    font-weight: 300;
+                }
+
+                h1{
+                    font-size: 3rem;
+                    font-weight: 300;
+                }
+            }
+
+            button{
+                width: fit-content;
+                border: none;
+                outline: none;
+                padding: 0.7rem 1rem;
+                border-radius: 0.5rem;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    section.view6{
+        width:100%;
+        padding:1rem;
+        
+        .element{
+            @include flex-column(2rem);
+            background-color: #cebd63;
+            color: rgb(20, 20, 20);
+            text-transform: uppercase;
+            padding:1.5rem;
+            border-radius: 0.7rem;
+
+            p{
+                font-size: 1.3rem;
+                font-weight: 500;
+            }
+
+            h1{
+                font-size: 3rem;
+                font-weight: 500;
+            }
+
+            button{
+                border-radius: 0.7rem;
+                width:100%;
+                border:none;
+                background-color: #1d1d1d;
+                padding:1.2rem;
+                color:rgb(221, 221, 221);
+                text-transform: uppercase;
+                font-weight: 800;
+                font-size: 1.1rem;
+
+                i{
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                }
+            }
+        }     
+    }
+}
+
+@media (min-width:900px) {
+    main {
+
+        section.view1 {
+            flex-direction: row;
+            padding: 1rem 4rem;
+
+            .top,
+            .bottom {
+                width: 50%;
+            }
+
+            .bottom {
+                justify-content: space-evenly;
+                padding: 3rem;
+
+                >p{
+                    font-size: 1.4rem;
+                }
+
+                .text {
+
+                    gap: 1.5rem;
+
+                    h1 {
+                        font-size: 3.5rem;
+                    }
+
+                    p {
+                        width: 100%;
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+
+        section.view2{
+            flex-direction: row;
+            padding: 1rem 4rem;
+        }
+
+        section.view3{
+            flex-direction: row-reverse;
+            padding: 1rem 4rem;
+
+            .top{
+                width:50%;
+            }
+            
+            .bottom{
+                width:50%;
+                padding:3rem;
+                justify-content: space-around;
+
+                .text{
+                    h1{
+                        font-size: 3.5rem;
+                    }
+
+                    .details{
+                        flex-direction: row;
+                        width:80%;
+                    }
+                }
+            }
+        }
+
+        section.view4{
+            padding:1rem 4rem;
+
+            .cards{
+                flex-direction: row;
+            }  
+        }
+
+        section.view5{
+            padding:1rem 4rem;
+            flex-direction: row;
+            aspect-ratio: 4/1;
+
+            .bottom,.top{
+                aspect-ratio: 1/1;
+                width:50%;
+            }
+
+            .top{
+                background-size: cover;
+            }
+
+            .bottom{
+                padding: 3rem;
+                justify-content: space-around;
+            }
+        }
+
+        section.view6{
+            padding:1rem 4rem;
+
+            .element{
+                flex-direction: row;
+                padding:4rem;
+                align-items: flex-end;
+                
+                .text{
+                    width:80%;
+
+                    p{
+                        font-size: 2rem;
+                        font-weight: 300;
+                    }
+
+                    h1{
+                        font-size:6rem;
+                        font-weight: 300;
+                    }
+                }
+                button{
+                    width:20%;
+                }
+            }
+        }
+    }
+}
