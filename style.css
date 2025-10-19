@@ -334,6 +334,9 @@ main section.view6 .element button i {
     flex-direction: row;
     padding: 1rem 4rem;
   }
+  main section.view2 .top .element h1, main section.view2 .bottom .element h1 {
+    font-size: 3.5rem;
+  }
   main section.view3 {
     flex-direction: row-reverse;
     padding: 1rem 4rem;
